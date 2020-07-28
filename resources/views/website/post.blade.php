@@ -49,9 +49,13 @@
                     {{ $post->details }}
                 </div>
                 <div class="col-lg-12 col-md-10 mx-auto">
+                    <h1 class="d-block">user comment</h1>
+
                 @foreach($post->comments as $one)
-               <h1 class="d-block">{{ $one->comment }}</h1>
-               <h1 class="d-block">{{ $one->created_at }}</h1>
+                <p>user comment <h1 class="d-block">{{ $one->comment }}</h1></p>
+               <p>time<h1 class="d-block">{{ $one->created_at }} </h1></p>
+               <p>user name<h1 class="d-block">{{ $one->user->name }}</h1></p>
+               <br>
                 @endforeach ($comments as $one)
             </div>
             </div>

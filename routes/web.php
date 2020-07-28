@@ -30,8 +30,8 @@ Route::get('/', 'WebsiteController@index')->name('index');
 Route::get('category/{slug}', 'WebsiteController@category')->name('category');
 Route::get('post/{slug}', 'WebsiteController@post')->name('post');
 Route::get('page/{slug}', 'WebsiteController@page')->name('page');
-Route::get('contact', 'WebsiteController@showContactForm')->name('contact.show');
-Route::post('contact', 'WebsiteController@submitContactForm')->name('contact.submit');
+Route::get('contact', 'WebsiteController@showContactForm',)->middleware(['auth','admin'])->name('contact.show');
+Route::post('contact', 'WebsiteController@submitContactForm')->middleware(['auth','admin'])->name('contact.submit');
 
 
 Route::get('post/createcomment', 'WebsiteController@createcomment')->name('createcomment');
